@@ -1,5 +1,8 @@
 package Eleven_Stroitel;
 
+
+// По введенным размерам кирпича и отверстия, определяет пролезет ли кирпич в отверстие
+
 import java.util.Scanner;
 
 public class Kirpichi {
