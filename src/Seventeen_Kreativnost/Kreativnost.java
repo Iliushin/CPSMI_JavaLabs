@@ -5,12 +5,12 @@ package Seventeen_Kreativnost;
 import java.util.Scanner;
 
 public class Kreativnost {
-    public static int slovo(char wq) {
+    public static boolean slovo(char wq) {
         if (wq != '\t' && wq != ','
                 && wq != '.' && wq != '!' && wq != '?'
                 && wq != ':' && wq != ';' && wq != '('
-                && wq != ')' && wq != '}' && wq != '{' && wq != ' ') return 1;
-        else return 0;
+                && wq != ')' && wq != '}' && wq != '{' && wq != ' ') return true;
+        else return false;
     }
 
     public static void main(String[] args) {
@@ -27,12 +27,12 @@ public class Kreativnost {
         if (n != "") {
 
             for (int i = 0; i < n.length() - 1; i++) {
-                if (slovo(n.charAt(i)) == 1) {
+                if (slovo(n.charAt(i)) ) {
                     d++;
                     if (i + 1 == n.length() - 1) {
                         k++;
                         break;
-                    } else if (slovo(n.charAt(i + 1)) == 0) {
+                    } else if (!slovo(n.charAt(i + 1))) {
                         k++;
                     }
 
@@ -40,8 +40,8 @@ public class Kreativnost {
                 } else {
                     if (i + 1 == n.length() - 1) {
 
-                        if (slovo(n.charAt(n.length() - 2)) == 0) {
-                            if (slovo(n.charAt(n.length() - 1)) == 1) {
+                        if (!slovo(n.charAt(n.length() - 2)) ) {
+                            if (slovo(n.charAt(n.length() - 1)) ) {
                                 k++;
                             }
                         }
@@ -49,7 +49,7 @@ public class Kreativnost {
 
                 }
             }
-            if (slovo(n.charAt(n.length() - 1)) == 1) {
+            if (slovo(n.charAt(n.length() - 1))) {
                 d++;
             }
 
